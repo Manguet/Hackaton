@@ -16,9 +16,18 @@ class AnswerController extends AbstractController
      */
     public function index(Request $request)
     {
+        $answer1 = $request->request->get('answer1');
+        $answer2 = $request->request->get('answer2');
+        $answer3 = $request->request->get('answer3');
+        $answer4 = $request->request->get('answer4');
+        $answer5 = $request->request->get('answer5');
 
-        return $this->render('answer/index.html.twig', [
-            'controller_name' => 'AnswerController',
-        ]);
+        if ($answer1 === 'good' && $answer2 === 'good' && $answer3 === 'good' && $answer4 === 'good' && $answer5 === 'good') {
+            return $this->render('answer/index.html.twig', [
+                'controller_name' => 'AnswerController',
+            ]);
+        } else {
+            return $this ->render('answer/fail.html.twig');
+        }
     }
 }

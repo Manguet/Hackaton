@@ -8,16 +8,16 @@
         <form action="{{ path('answer_index') }}" method="post" name="quizz_form">
         {% for question in questions %}
             <p>{{ loop.index }}- {{ question.content }}</p>
-            <input type="checkbox">{{ question.goodAnswer }}</input>
+            <input type="checkbox" name="answer1" value="good">{{ question.goodAnswer }}</input>
                 <br>
-            <input type="checkbox">{{ question.firstFalse }}</input>
+            <input type="checkbox" name="answer2" value="false">{{ question.firstFalse }}</input>
                 <br>
             {% if question.secondFalse != null %}
-            <input type="checkbox">{{ question.secondFalse }}</input>
+            <input type="checkbox" name="answer3" value="false">{{ question.secondFalse }}</input>
                 <br>
             {% endif %}
             {% if question.thirdFalse != null %}
-            <input type="checkbox">{{ question.thirdFalse }}</input>
+            <input type="checkbox" name="answer4" value="false">{{ question.thirdFalse }}</input>
                 <br>
             {% endif %}
             <br>
