@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="{{ path('app_index') }}"><i class="fas fa-globe-europe logo"></i> Star Maniac</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,26 +7,41 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="{{ path('app_index') }}">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">Link</a>
+                <a class="nav-link active" href="#">Documentation</a>
             </li>
-            <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+            <li class="nav-item">
+                {% if app.user %}
+                    <a class="nav-link active" href="#">Quizz</a>
+                {% endif %}
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        {% if is_granted("ROLE_ADMIN")%}
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administration
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ path('badge_index') }}">Badges</a>
+                    <a class="dropdown-item" href="{{ path('chapter_index') }}">Chapitres</a>
+                    <a class="dropdown-item" href="{{ path('content_index') }}">Contenu</a>
+                    <a class="dropdown-item" href="{{ path('multimedia_index') }}">Multimedia</a>
+                    <a class="dropdown-item" href="{{ path('planet_index') }}">Planètes</a>
+                    <a class="dropdown-item" href="{{ path('question_index') }}">Questions</a>
+                    <a class="dropdown-item" href="{{ path('quizz_index') }}">Quizz</a>
+                    <a class="dropdown-item" href="{{ path('user_index') }}">Utilisateurs</a>
+                    <a class="dropdown-item" href="{{ path('user_image_index') }}">Images</a>
+                </div>
+            </li>
+        {% endif %}
+        <li class="nav-item active">
+            {% if app.user %}
+                <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+            {% else %}
+                <a href="{{ path('app_login') }}"> Se connecter</a>
+            {% endif %}
+        </li>
     </div>
 </nav>
