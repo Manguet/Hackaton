@@ -12,10 +12,11 @@ class MultimediaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
+            ->add('name', null, ['label' => 'Nom'])
             ->add('URL')
             ->add('chapter', null, [
                 'choice_label' => 'name',
+                'label'        => 'Chapitre',
             ])
         ;
     }

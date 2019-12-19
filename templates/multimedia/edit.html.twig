@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Multimedia{% endblock %}
+{% block title %}Editer Multimedia{% endblock %}
 
 {% block body %}
-    <h1>Edit Multimedia</h1>
+    <div class="mt-5 mr-5 ml-5 mb-5">
+        <h1>Editer Multimedia</h1>
 
-    {{ include('multimedia/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('multimedia/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('multimedia_index') }}">back to list</a>
+        <a href="{{ path('multimedia_index') }}" class="btn btn-custom mt-3">Retour</a>
 
-    {{ include('multimedia/_delete_form.html.twig') }}
+        {{ include('multimedia/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

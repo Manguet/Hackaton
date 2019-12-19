@@ -1,37 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Multimedia index{% endblock %}
+{% block title %}Multimedia{% endblock %}
 
 {% block body %}
-    <h1>Multimedia index</h1>
+    <div class="mt-5 mb-5 mr-5 ml-5">
+        <h1>Multimedia</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>URL</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for multimedia in multimedia %}
-            <tr>
-                <td>{{ multimedia.id }}</td>
-                <td>{{ multimedia.name }}</td>
-                <td>{{ multimedia.URL }}</td>
-                <td>
-                    <a href="{{ path('multimedia_show', {'id': multimedia.id}) }}">show</a>
-                    <a href="{{ path('multimedia_edit', {'id': multimedia.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>URL</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for multimedia in multimedia %}
+                <tr>
+                    <td>{{ multimedia.id }}</td>
+                    <td>{{ multimedia.name }}</td>
+                    <td>{{ multimedia.URL }}</td>
+                    <td>
+                        <a href="{{ path('multimedia_show', {'id': multimedia.id}) }}">Voir</a>
+                        <a href="{{ path('multimedia_edit', {'id': multimedia.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Aucun résultat</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('multimedia_new') }}">Create new</a>
+        <a href="{{ path('multimedia_new') }}" class="btn btn-custom">Ajouter</a>
+    </div>
 {% endblock %}

@@ -3,32 +3,34 @@
 {% block title %}Badge{% endblock %}
 
 {% block body %}
-    <h1>Badge</h1>
+    <div class="mt-5 mb-5 ml-5 mr-5">
+        <h1>Badge</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ badge.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ badge.name }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ badge.image }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ badge.description }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ badge.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ badge.name }}</td>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <td>{{ badge.image }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ badge.description }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('badge_index') }}">back to list</a>
+        <a href="{{ path('badge_index') }}" class="btn btn-custom mr-5 mb-5">Retour</a>
 
-    <a href="{{ path('badge_edit', {'id': badge.id}) }}">edit</a>
+        <a href="{{ path('badge_edit', {'id': badge.id}) }}" class="btn btn-custom">Editer</a>
 
-    {{ include('badge/_delete_form.html.twig') }}
+        {{ include('badge/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

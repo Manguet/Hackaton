@@ -14,10 +14,14 @@ nav {
     animation: buttoneon .08s ease-in-out infinite alternate;
   }
 
-  a {
-    color: $white;
-    &:hover {
-      color: $yellow;
+  .dropdown-menu {
+    background-color: $black;
+    .dropdown-item {
+      color: $white;
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
     }
   }
 

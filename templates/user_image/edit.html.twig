@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit UserImage{% endblock %}
+{% block title %}Editer Image Utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Edit UserImage</h1>
+    <div class="mt-5 mb-5 ml-5 mr-5">
+        <h1>Editer Image Utilisateur</h1>
 
-    {{ include('user_image/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('user_image/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('user_image_index') }}">back to list</a>
+        <a href="{{ path('user_image_index') }}" class="btn btn-custom">Retour</a>
 
-    {{ include('user_image/_delete_form.html.twig') }}
+        {{ include('user_image/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

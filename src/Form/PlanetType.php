@@ -12,10 +12,7 @@ class PlanetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('is_done')
-            ->add('is_half')
-            ->add('is_off')
+            ->add('name', null, ['label' => 'Nom'])
             ->add('description')
         ;
     }

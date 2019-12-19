@@ -1,43 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Question index{% endblock %}
+{% block title %}Question{% endblock %}
 
 {% block body %}
-    <h1>Question index</h1>
+    <div class="mt-5 mr-5 ml-5 mb-5">
+        <h1>Questions</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>Good_answer</th>
-                <th>First_false</th>
-                <th>Second_false</th>
-                <th>Third_false</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for question in questions %}
-            <tr>
-                <td>{{ question.id }}</td>
-                <td>{{ question.content }}</td>
-                <td>{{ question.goodAnswer }}</td>
-                <td>{{ question.firstFalse }}</td>
-                <td>{{ question.secondFalse }}</td>
-                <td>{{ question.thirdFalse }}</td>
-                <td>
-                    <a href="{{ path('question_show', {'id': question.id}) }}">show</a>
-                    <a href="{{ path('question_edit', {'id': question.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Contenu</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for question in questions %}
+                <tr>
+                    <td>{{ question.id }}</td>
+                    <td>{{ question.content }}</td>
+                    <td>
+                        <a href="{{ path('question_show', {'id': question.id}) }}">Voir</a>
+                        <a href="{{ path('question_edit', {'id': question.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Aucun Résultat</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('question_new') }}">Create new</a>
+        <a href="{{ path('question_new') }}" class="btn btn-custom">Ajouter</a>
+    </div>
 {% endblock %}

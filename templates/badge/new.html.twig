@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Badge{% endblock %}
+{% block title %}Nouveau Badge{% endblock %}
 
 {% block body %}
-    <h1>Create new Badge</h1>
+    <div class="mt-5 mr-5 mb-5 ml-5">
+        <h1>Créer un Badge</h1>
 
-    {{ include('badge/_form.html.twig') }}
+        {{ include('badge/_form.html.twig') }}
 
-    <a href="{{ path('badge_index') }}">back to list</a>
+        <a href="{{ path('badge_index') }}" class="btn btn-custom mt-5">Retour</a>
+    </div>
 {% endblock %}
