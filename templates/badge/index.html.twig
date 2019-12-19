@@ -1,39 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Badge index{% endblock %}
+{% block title %}Badges{% endblock %}
 
 {% block body %}
-    <h1>Badge index</h1>
+    <div class="mt-5 mb-5 ml-5 mr-5">
+        <h1>Badges</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for badge in badges %}
-            <tr>
-                <td>{{ badge.id }}</td>
-                <td>{{ badge.name }}</td>
-                <td>{{ badge.image }}</td>
-                <td>{{ badge.description }}</td>
-                <td>
-                    <a href="{{ path('badge_show', {'id': badge.id}) }}">show</a>
-                    <a href="{{ path('badge_edit', {'id': badge.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for badge in badges %}
+                <tr>
+                    <td>{{ badge.id }}</td>
+                    <td>{{ badge.name }}</td>
+                    <td>{{ badge.image }}</td>
+                    <td>{{ badge.description }}</td>
+                    <td>
+                        <a href="{{ path('badge_show', {'id': badge.id}) }}">Voir</a>
+                        <a href="{{ path('badge_edit', {'id': badge.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun résultat trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('badge_new') }}">Create new</a>
+        <a href="{{ path('badge_new') }}" class="btn btn-custom">Créer un nouveau badge</a>
+    </div>
 {% endblock %}

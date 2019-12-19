@@ -23,6 +23,14 @@ h1 {
   }
 }
 
+a {
+  color: $white;
+  &:hover {
+    color: $yellow;
+    text-decoration: none;
+  }
+}
+
 @keyframes neon {
   from {
     text-shadow:

@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Content{% endblock %}
+{% block title %}Nouveau Contenu{% endblock %}
 
 {% block body %}
-    <h1>Create new Content</h1>
+    <div class="mt-5 mb-5 mr-5 ml-5">
+        <h1>Nouveau Contenu</h1>
 
-    {{ include('content/_form.html.twig') }}
+        {{ include('content/_form.html.twig') }}
 
-    <a href="{{ path('content_index') }}">back to list</a>
+        <a href="{{ path('content_index') }}" class="btn btn-custom">Retour</a>
+    </div>
 {% endblock %}

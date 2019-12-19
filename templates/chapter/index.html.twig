@@ -1,35 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Chapter index{% endblock %}
+{% block title %}Chapitres{% endblock %}
 
 {% block body %}
-    <h1>Chapter index</h1>
+    <div class="mt-5 mb-5 ml-5 mr-5">
+        <h1>Chapitres</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for chapter in chapters %}
-            <tr>
-                <td>{{ chapter.id }}</td>
-                <td>{{ chapter.name }}</td>
-                <td>
-                    <a href="{{ path('chapter_show', {'id': chapter.id}) }}">show</a>
-                    <a href="{{ path('chapter_edit', {'id': chapter.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for chapter in chapters %}
+                <tr>
+                    <td>{{ chapter.id }}</td>
+                    <td>{{ chapter.name }}</td>
+                    <td>
+                        <a href="{{ path('chapter_show', {'id': chapter.id}) }}">Voir</a>
+                        <a href="{{ path('chapter_edit', {'id': chapter.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Aucun résultat trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('chapter_new') }}">Create new</a>
+        <a href="{{ path('chapter_new') }}">Ajouter</a>
+    </div>
 {% endblock %}
