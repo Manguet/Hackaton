@@ -16,8 +16,7 @@ class AnswerController extends AbstractController
      */
     public function index(Request $request)
     {
-        $data = $request;
-        dd($data);
+
         return $this->render('answer/index.html.twig', [
             'controller_name' => 'AnswerController',
         ]);
