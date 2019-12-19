@@ -20,6 +20,14 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("planets", name="quizz")
+     */
+    public function quizzHomepage()
+    {
+        return $this->render('systeme/index.html.twig');
+    }
+
+    /**
      * @Route("documentation", name="documentation")
      */
     public function chapters()
