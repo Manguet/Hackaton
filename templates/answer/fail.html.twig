@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quizz{% endblock %}
+
+{% block body %}
+    <div class="mt-5 mb-5 mr-5 ml-5">
+        <h1>Vous avez échoué au test!</h1>
+        <a href="{{ path('app_quizz') }}" class="btn btn-custom">Retour aux quizz</a>
+    </div>
+{% endblock %}

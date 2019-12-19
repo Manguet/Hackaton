@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TestController extends AbstractController
 {
     /**
-     * @Route("/earth", name="earth")
+     * @Route("/earth", name="earth", methods={"GET","POST"})
      */
     public function earth()
     {

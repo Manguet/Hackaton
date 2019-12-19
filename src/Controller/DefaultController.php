@@ -20,7 +20,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("planets", name="quizz")
+     * @Route("system", name="quizz")
      */
     public function quizzHomepage()
     {
