@@ -17,4 +17,12 @@ class DefaultController extends AbstractController
     {
         return $this->render('index.html.twig');
     }
+
+    /**
+     * @Route("planets", name="quizz")
+     */
+    public function quizzHomepage()
+    {
+        return $this->render('systeme/index.html.twig');
+    }
 }
