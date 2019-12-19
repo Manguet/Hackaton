@@ -7,13 +7,22 @@ nav {
       font-size: 1.8rem;
     }
   }
+
+  .navbar-toggler-icon {
+    background-color: $white;
+    border-radius: 50%;
+    animation: buttoneon .08s ease-in-out infinite alternate;
+  }
+
   a {
     color: $white;
     &:hover {
       color: $yellow;
     }
   }
+
   li {
     list-style-type: none;
   }
 }
+
