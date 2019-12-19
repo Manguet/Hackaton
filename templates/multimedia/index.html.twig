@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Multimedia index{% endblock %}
+
+{% block body %}
+    <h1>Multimedia index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>URL</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for multimedia in multimedia %}
+            <tr>
+                <td>{{ multimedia.id }}</td>
+                <td>{{ multimedia.name }}</td>
+                <td>{{ multimedia.URL }}</td>
+                <td>
+                    <a href="{{ path('multimedia_show', {'id': multimedia.id}) }}">show</a>
+                    <a href="{{ path('multimedia_edit', {'id': multimedia.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('multimedia_new') }}">Create new</a>
+{% endblock %}
