@@ -1,0 +1,19 @@
+nav {
+  background-color: $black;
+  font-size: 1.2rem;
+  .navbar-brand {
+    font-size: 1.5rem;
+    .logo {
+      font-size: 1.8rem;
+    }
+  }
+  a {
+    color: $white;
+    &:hover {
+      color: $yellow;
+    }
+  }
+  li {
+    list-style-type: none;
+  }
+}
