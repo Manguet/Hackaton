@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/question")
+ * @Route("/question", name="question_")
  */
 class QuestionController extends AbstractController
 {
     /**
-     * @Route("/", name="question_index", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(QuestionRepository $questionRepository): Response
     {
@@ -26,7 +26,7 @@ class QuestionController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="question_new", methods={"GET","POST"})
+     * @Route("/new", name="new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -49,7 +49,7 @@ class QuestionController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="question_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      */
     public function show(Question $question): Response
     {
@@ -59,7 +59,7 @@ class QuestionController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="question_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Question $question): Response
     {
@@ -79,7 +79,7 @@ class QuestionController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="question_delete", methods={"DELETE"})
+     * @Route("/{id}", name="delete", methods={"DELETE"})
      */
     public function delete(Request $request, Question $question): Response
     {

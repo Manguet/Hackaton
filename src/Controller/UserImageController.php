@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/user/image")
+ * @Route("/user-image", name="user_image_")
  */
 class UserImageController extends AbstractController
 {
     /**
-     * @Route("/", name="user_image_index", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(UserImageRepository $userImageRepository): Response
     {
@@ -26,7 +26,7 @@ class UserImageController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="user_image_new", methods={"GET","POST"})
+     * @Route("/new", name="new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -49,7 +49,7 @@ class UserImageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="user_image_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      */
     public function show(UserImage $userImage): Response
     {
@@ -59,7 +59,7 @@ class UserImageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="user_image_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      */
     public function edit(Request $request, UserImage $userImage): Response
     {
@@ -79,7 +79,7 @@ class UserImageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="user_image_delete", methods={"DELETE"})
+     * @Route("/{id}", name="delete", methods={"DELETE"})
      */
     public function delete(Request $request, UserImage $userImage): Response
     {
