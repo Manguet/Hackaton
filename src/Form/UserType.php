@@ -31,7 +31,11 @@ class UserType extends AbstractType
             ))
             ->add('nickname')
             ->add('status')
-            ->add('badges')
+            ->add('badges', null, [
+                'choice_label' => 'name',
+                'expanded'     => true,
+                'multiple'     => true,
+            ])
         ;
     }
 
