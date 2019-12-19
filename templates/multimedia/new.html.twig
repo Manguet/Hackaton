@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Multimedia{% endblock %}
+{% block title %}Nouveau Multimedia{% endblock %}
 
 {% block body %}
-    <h1>Create new Multimedia</h1>
+    <div class="mt-5 ml-5 mr-5 mb-5">
+        <h1>Nouveau Multimedia</h1>
 
-    {{ include('multimedia/_form.html.twig') }}
+        {{ include('multimedia/_form.html.twig') }}
 
-    <a href="{{ path('multimedia_index') }}">back to list</a>
+        <a href="{{ path('multimedia_index') }}" class="btn btn-custom mt-5">Retour</a>
+    </div>
 {% endblock %}

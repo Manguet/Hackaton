@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New UserImage{% endblock %}
+{% block title %}Nouvelle Image utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Create new UserImage</h1>
+    <div class="mt-5 ml-5 mr-5 mb-5">
+        <h1>Nouvelle Image utilisateur</h1>
 
-    {{ include('user_image/_form.html.twig') }}
+        {{ include('user_image/_form.html.twig') }}
 
-    <a href="{{ path('user_image_index') }}">back to list</a>
+        <a href="{{ path('user_image_index') }}" class="btn btn-custom mt-5">Retour</a>
+    </div>
 {% endblock %}

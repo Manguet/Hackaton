@@ -3,40 +3,42 @@
 {% block title %}Question{% endblock %}
 
 {% block body %}
-    <h1>Question</h1>
+    <div class="mt-5 mb-5 mr-5 ml-5">
+        <h1>Question</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ question.id }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ question.content }}</td>
-            </tr>
-            <tr>
-                <th>Good_answer</th>
-                <td>{{ question.goodAnswer }}</td>
-            </tr>
-            <tr>
-                <th>First_false</th>
-                <td>{{ question.firstFalse }}</td>
-            </tr>
-            <tr>
-                <th>Second_false</th>
-                <td>{{ question.secondFalse }}</td>
-            </tr>
-            <tr>
-                <th>Third_false</th>
-                <td>{{ question.thirdFalse }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ question.id }}</td>
+                </tr>
+                <tr>
+                    <th>Contenu</th>
+                    <td>{{ question.content }}</td>
+                </tr>
+                <tr>
+                    <th>Bonne Réponse</th>
+                    <td>{{ question.goodAnswer }}</td>
+                </tr>
+                <tr>
+                    <th>Mauvaise Réponse</th>
+                    <td>{{ question.firstFalse }}</td>
+                </tr>
+                <tr>
+                    <th>Mauvaise Réponse</th>
+                    <td>{{ question.secondFalse }}</td>
+                </tr>
+                <tr>
+                    <th>Mauvaise Réponse</th>
+                    <td>{{ question.thirdFalse }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('question_index') }}">back to list</a>
+        <a href="{{ path('question_index') }}" class="btn btn-custom mr-5">Retour</a>
 
-    <a href="{{ path('question_edit', {'id': question.id}) }}">edit</a>
+        <a href="{{ path('question_edit', {'id': question.id}) }}" class="btn btn-custom">Editer</a>
 
-    {{ include('question/_delete_form.html.twig') }}
+        {{ include('question/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

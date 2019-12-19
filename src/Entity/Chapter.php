@@ -33,6 +33,11 @@ class Chapter
      */
     private $contents;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $planet_image;
+
     public function __construct()
     {
         $this->multimedia = new ArrayCollection();
@@ -114,6 +119,18 @@ class Chapter
                 $content->setChapter(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPlanetImage(): ?string
+    {
+        return $this->planet_image;
+    }
+
+    public function setPlanetImage(?string $planet_image): self
+    {
+        $this->planet_image = $planet_image;
 
         return $this;
     }

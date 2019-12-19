@@ -7,13 +7,30 @@ nav {
       font-size: 1.8rem;
     }
   }
-  a {
-    color: $white;
-    &:hover {
-      color: $yellow;
+
+  .badge-nav {
+    height: 4vh;
+  }
+
+  .navbar-toggler-icon {
+    background-color: $white;
+    border-radius: 50%;
+    animation: buttoneon .08s ease-in-out infinite alternate;
+  }
+
+  .dropdown-menu {
+    background-color: $black;
+    .dropdown-item {
+      color: $white;
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
     }
   }
+
   li {
     list-style-type: none;
   }
 }
+

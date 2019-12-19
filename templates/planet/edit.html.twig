@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Planet{% endblock %}
+{% block title %}Editer Planete{% endblock %}
 
 {% block body %}
-    <h1>Edit Planet</h1>
+    <div class="mt-5 ml-5 mr-5 mb-5">
+        <h1>Editer une Planète</h1>
 
-    {{ include('planet/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('planet/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('planet_index') }}">back to list</a>
+        <a href="{{ path('planet_index') }}">back to list</a>
 
-    {{ include('planet/_delete_form.html.twig') }}
+        {{ include('planet/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
