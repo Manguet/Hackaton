@@ -13,6 +13,7 @@ class ChapterType extends AbstractType
     {
         $builder
             ->add('name', null, ['label' => 'Nom'])
+            ->add('planet_image')
         ;
     }
 
