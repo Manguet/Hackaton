@@ -20,7 +20,6 @@ class UserType extends AbstractType
                 'choices'  => [
                     'Visiteur'       => User::SUBSCRIBER,
                     'Administrateur' => User::ADMIN,
-                    'Banni'          => User::BAN,
                 ],
                 'multiple' => true,
                 'expanded' => true,
