@@ -1,0 +1,33 @@
+.index-documentation {
+
+  .planet-size {
+    height: 5vh;
+  }
+}
+
+.documentation-img {
+  width: 15vw;
+}
+
+.description{
+  max-height: 100vh;
+  overflow: auto;
+}
+
+@media screen and (min-width: 600px){
+  .mobileOnly {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tabletOnly{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .desktopOnly {
+    display: none;
+  }
+}

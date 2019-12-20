@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Planet index{% endblock %}
+
+{% block body %}
+    <div class="container-fluid stars min-vw-100">
+        <div class="quizzTitle text-center pt-3">
+            Choissisez un astre pour commencer un quizz.
+        </div>
+
+        <div class="row">
+            <div class="col-3 row px-0 mr-3">
+                <div class="col-8 px-0">
+
+                </div>
+                <div class="col-4 content d-flex justify-content-center align-self-center px-0">
+                    <a href="{{ path('test_moon') }}"><img src="{{ asset('build/images/lune.png') }}" class="satellite" alt="Lune"></a>
+                    <div class="text-block">
+                        <a href="{{ path('test_moon') }}"><div class="text">La Lune est le seul satellite naturel permanent de la Terre. </div></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6 row px-0">
+                <div class="content col-6 px-0">
+                    <a href="{{ path('test_earth') }}"><img src="{{ asset('build/images/terre.png') }}" class="planet" alt="Terre"></a>
+                    <div class="text-block">
+                        <a href="{{ path('test_earth') }}"><div class="text">La Terre est une planète du Système solaire, la troisième plus proche du Soleil et la cinquième plus grande, tant en taille qu'en masse, de ce système planétaire dont elle est également la plus massive des planètes telluriques. </div></a>
+                    </div>
+                </div>
+                <div class="content col-6 px-0">
+                    <a href="{{ path('test_mars') }}"><img src="{{ asset('build/images/mars.png') }}" class="planet" alt="Mars"></a>
+                    <div class="text-block">
+                        <a href="{{ path('test_mars') }}"><div class="text">Mars est la quatrième planète par ordre de distance croissante au Soleil et la deuxième par masse et par taille croissantes. Son éloignement au Soleil est compris entre 206,6 et 249,2 millions de kilomètres. </div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 px-0">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3 px-0">
+                <div>
+                    <div class="content">
+                        <a href="{{ path('test_mercure') }}"><img src="{{ asset('build/images/mercure.png') }}" class="planet" alt="Mercure"></a>
+                        <div class="text-block">
+                            <a href="{{ path('test_mercure') }}"><div class="text">Mercure est la planète la plus proche du Soleil et la moins massive du Système solaire. Son éloignement au Soleil est compris entre 46 et 70 millions de km.</div></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <a href="{{ path('test_uranus') }}"><img src="{{ asset('build/images/uranus.png') }}" class="planet" alt="Uranus"></a>
+                        <div class="text-block">
+                            <a href="{{ path('test_uranus') }}"><div class="text">Uranus est la septième planète du Système solaire par sa distance au Soleil, la troisième par la taille et la quatrième par la masse.</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex content justify-content-center align-self-center px-0">
+                <a href="{{ path('test_sun') }}"><img src="{{ asset('build/images/soleil.png') }}" class="planet" alt="Soleil"></a>
+                <div class="text-block">
+                    <a href="{{ path('test_sun') }}"><div class="text">Le Soleil est l’étoile du Système solaire. Dans la classification astronomique, c’est une étoile de type naine jaune, composée d’hydrogène (75% de la masse ou 92% du volume) et d’hélium (25% de la masse ou 8% du volume).</div></a>
+                </div>
+            </div>
+            <div class="col-3 px-0">
+                <div>
+                    <div class="content">
+                        <a href="{{ path('test_neptune') }}"><img src="{{ asset('build/images/neptune.png') }}" class="planet" alt="Neptune"></a>
+                        <div class="text-block">
+                            <a href="{{ path('test_neptune') }}"><div class="text">Neptune est la huitième et dernière planète du Système solaire par distance croissante au Soleil. </div></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <a href="{{ path('test_saturne') }}"><img src="{{ asset('build/images/saturne.png') }}" class="planet" alt="Saturne"></a>
+                        <div class="text-block">
+                            <a href="{{ path('test_saturne') }}"><div class="text">Saturne est la sixième planète du Système solaire par ordre de distance au Soleil et la deuxième après Jupiter tant par sa taille que par sa masse.</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-3 px-0">
+
+            </div>
+            <div class="col-6 row px-0">
+                <div class="col-6 content px-0">
+                    <a href="{{ path('test_jupiter') }}"><img src="{{ asset('build/images/jupiter.png') }}" class="planet" alt="Jupiter"></a>
+                    <div class="text-block">
+                        <a href="{{ path('test_jupiter') }}"><div class="text">Jupiter est une planète géante gazeusea. Il s'agit de la plus grosse planète du Système solaire, plus volumineuse et massive que toutes les autres planètes réunies.</div></a>
+                    </div>
+                </div>
+                <div class="col-6 content px-0">
+                    <a href="{{ path('test_venus') }}"><img src="{{ asset('build/images/venus.png') }}" class="planet" alt="Venus"></a>
+                    <div class="text-block">
+                        <a href="{{ path('test_venus') }}"><div class="text">Vénus est une des quatre planètes telluriques du Système solaire. Elle est la deuxième planète par ordre d'éloignement au Soleil, et la sixième par masse ou par taille décroissantes. </div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 px-0">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

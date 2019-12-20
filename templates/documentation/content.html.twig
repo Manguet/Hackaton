@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Documentations{% endblock %}
+
+{% block body %}
+    <div class="mt-5 ml-5 mb-5 mr-5 d-flex justify-content-center">
+        <div class="d-flex flex-column border-right col-lg-3 col-md-4">
+            <table class="index-documentation">
+                <thead>
+                <tr>
+                    <th colspan="2">Index des Planètes :</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for chapter in chapters %}
+                    <tr>
+                        <td class="d-flex align-items-center desktop justify-content-center text-center"><img src="{{ chapter.planetImage }}" alt="{{ chapter.name }}" class="planet-size mt-3"></td>
+                        <td class="mt-3"><a href="{{ path('documentation_planet', {'id' : chapter.id}) }}"><i class="fas fa-space-shuttle"></i> {{ chapter.name }}</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-6 col-md-5 ml-5 mr-5 border-right tabletOnly description">
+            <h2 class="text-center mt-3 tabletOnly">{{ chapter.name }}</h2>
+            {% for content in contents %}
+                <h3 class="tabletOnly"><u>{{ content.name }}</u></h3>
+                <p class="text-justify mr-5 tabletOnly">{{ content.description }}</p>
+            {% endfor %}
+        </div>
+
+        <div class="d-flex flex-column align-items-center desktopOnly">
+            {% for multimedia in multimedias %}
+                <p class="text-center desktopOnly">{{ multimedia.name }}</p>
+                <img src="{{ multimedia.url }}" alt="{{ multimedia.name }}" class="documentation-img desktopOnly">
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-12 d-flex flex-column justify-content-center mobileOnly pl-5 pr-5">
+        <h2 class="text-center mobileOnly">{{ chapter.name }}</h2>
+        {% for content in contents %}
+            <h3 class="mobileOnly"><u>{{ content.name }}</u></h3>
+            <p class="text-justify mobileOnly">{{ content.description }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
