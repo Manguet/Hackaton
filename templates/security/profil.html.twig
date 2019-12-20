@@ -11,13 +11,14 @@
             <p>Liste des Badges obtenus :</p>
             <div class="d-flex mr-5">
                 {% for badge in app.user.badges %}
-                    <div class="d-flex flex-column align-items-center">
-                    <p>{{ badge.name }}</p>
-                    <img src="{{ badge.image }}" alt="{{ badge.name }}" class="profil-badge">
-                    <p>{{ badge.description }}</p>
+                    <div class="d-flex flex-column align-items-center mr-5">
+                        <p>{{ badge.name }}</p>
+                        <img src="{{ badge.image }}" alt="{{ badge.name }}" class="profil-badge">
+                        <p>{{ badge.description }}</p>
                     </div>
                 {% endfor %}
             </div>
         </div>
+        <a href="{{ path('profil_updated') }}" class="btn btn-custom mt-3 mb-3">Mettre à jour</a>
     </div>
 {% endblock %}
