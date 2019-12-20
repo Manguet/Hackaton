@@ -9,6 +9,7 @@ use App\Security\LoginFormAutheticatorAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
@@ -86,8 +87,9 @@ class SecurityController extends AbstractController
     /**
      * @Route("profil", name="app_profil")
      */
-    public function profil()
+    public function profil(SessionInterface $session)
     {
+
         return $this->render('security/profil.html.twig');
     }
 }

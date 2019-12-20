@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Chapter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -16,7 +17,7 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        return $this->render('index.html.twig');
+                return $this->render('index.html.twig');
     }
 
     /**
