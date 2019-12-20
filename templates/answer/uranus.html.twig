@@ -4,33 +4,33 @@
 
 {% block body %}
     <div class="mt-5 mb-5 mr-5 ml-5">
-        <h2 class="text-center">{{ quizz_b.name }}</h2>
-        <form action="{{ path('answer_uranus2') }}" method="post" name="quizz_form">
+        <h2 class="text-center quizzName">{{ quizz_b.name }}</h2>
+        <form action="{{ path('answer_uranus2') }}" method="post" name="quizz_form" class="text-center">
             {% for question in questions %}
-                <p>{{ loop.index }}- {{ question.content }}</p>
+                <p class="mt-5 text">{{ loop.index }}- {{ question.content }}</p>
                 <div id="mainShuffle{{ loop.index }}">
                     <div class="shuffle">
                         <input type="checkbox" name="answer{{ loop.index }}" value="good">{{ question.goodAnswer }}</input>
-                        <br>
+                        <br/>
                     </div>
                     <div class="shuffle">
                         <input type="checkbox" name="answer{{ loop.index }}" value="false">{{ question.firstFalse }}</input>
-                        <br>
+                        <br/>
                     </div>
                     {% if question.secondFalse != null %}
                         <div class="shuffle">
                             <input type="checkbox" name="answer{{ loop.index }}" value="false">{{ question.secondFalse }}</input>
-                            <br>
+                            <br/>
                         </div>
                     {% endif %}
                     {% if question.thirdFalse != null %}
                         <div class="shuffle">
                             <input type="checkbox" name="answer{{ loop.index }}" value="false">{{ question.thirdFalse }}</input>
-                            <br>
+                            <br/>
                         </div>
                     {% endif %}
                 </div>
-                <br>
+                <br />
             {% endfor %}
             <button type="submit" class="btn btn-custom mt-5" value="quizz_value">Valider</button>
         </form>
