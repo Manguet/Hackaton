@@ -85,9 +85,35 @@ a {
 
 .intro {
   text-shadow: 0 0 0px;
-  color: #8f8f8f;
+  color: #d9d9d9;
   border: solid 1px;
   border-style: dashed double;
   border-radius: 5px;
   border-color: #ebebeb;
+}
+
+.spaceship {
+  opacity: 0.1;
+  height: 200px;
+  background-image: url("../images/spaceship.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.earth {
+  opacity: 0.1;
+  height: 200px;
+  background-image: url("../images/earth.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.moon {
+  opacity: 0.1;
+  height: 165px;
+  background-image: url("../images/moon.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
