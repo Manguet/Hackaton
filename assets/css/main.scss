@@ -84,9 +84,10 @@ a {
 }
 
 .intro {
-   text-shadow: 0 0 0px;
-   color: #8f8f8f;
-   border: solid 2px;
-   border-radius: 5px;
-   border-color: #ebebeb;
+  text-shadow: 0 0 0px;
+  color: #8f8f8f;
+  border: solid 1px;
+  border-style: dashed double;
+  border-radius: 5px;
+  border-color: #ebebeb;
 }
