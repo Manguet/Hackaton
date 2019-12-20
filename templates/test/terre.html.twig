@@ -4,23 +4,23 @@
 
 {% block body %}
     <div class="mt-5 mb-5 mr-5 ml-5">
-        <h2 class="text-center">{{ quizz_a.name }}</h2>
-        <form action="{{ path('answer_index') }}" method="post" name="quizz_form">
+        <h2 class="text-center quizzName">{{ quizz_a.name }}</h2>
+        <form action="{{ path('answer_index') }}" method="post" name="quizz_form" class="text-center">
         {% for question in questions %}
-            <p>{{ loop.index }}- {{ question.content }}</p>
+            <p class="mt-5 text">{{ loop.index }}- {{ question.content }}</p>
             <input type="checkbox" name="answer{{ loop.index }}" value="good">{{ question.goodAnswer }}</input>
-                <br>
+                <br/>
             <input type="checkbox" name="answer{{ loop.index }}" value="false">{{ question.firstFalse }}</input>
-                <br>
+                <br/>
             {% if question.secondFalse != null %}
             <input type="checkbox" name="answer{{ loop.index }}" value="false">{{ question.secondFalse }}</input>
-                <br>
+                <br/>
             {% endif %}
             {% if question.thirdFalse != null %}
             <input type="checkbox" name="answer{{ loop.index }}" value="false">{{ question.thirdFalse }}</input>
-                <br>
+                <br/>
             {% endif %}
-            <br>
+            <br/>
         {% endfor %}
         <button type="submit" class="btn btn-custom mt-5" value="quizz_value">Valider</button>
         </form>

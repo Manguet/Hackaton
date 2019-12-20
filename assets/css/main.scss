@@ -86,7 +86,7 @@ a {
 .intro {
   text-shadow: 0 0 0px;
   color: #d9d9d9;
-  border: solid 1px;
+  border: 1px;
   border-style: dashed double;
   border-radius: 5px;
   border-color: #ebebeb;
@@ -116,4 +116,19 @@ a {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.quizzName {
+  padding: 5px;
+  color: #d9d9d9;
+  border: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #ebebeb;
+}
+
+@media screen and (max-width: 460px) {
+  .lactee{
+    height: 250px;
+  }
 }
