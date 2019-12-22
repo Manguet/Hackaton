@@ -19,6 +19,7 @@
         "watch": "encore dev --watch",
         "start": "public/build/entrypoints.json",
         "build": "webpack",
+        "heroku-postbuild": "ng build --prod",
         "postinstall" : "encore production --progress"
     },
     "engines": {
