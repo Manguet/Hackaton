@@ -17,8 +17,9 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
+        "start": "node webpack.config.js",
         "build": "webpack",
-        "heroku-postbuild" : "encore production"
+        "postinstall" : "encore production --progress"
     },
     "engines": {
       "yarn": "1.19.2"
