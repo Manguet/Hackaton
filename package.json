@@ -17,7 +17,7 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "start": "assets/js/app.js",
+        "start": "public/index.php",
         "build": "webpack",
         "heroku-postbuild": "ng build --prod",
         "postinstall" : "encore production --progress"
