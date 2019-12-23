@@ -19,7 +19,6 @@
         "watch": "encore dev --watch",
         "start": "public/index.php",
         "build": "node_modules/.bin/encore production",
-        "heroku-postbuild": "ng build --prod",
         "postinstall" : "encore production --progress"
     },
     "engines": {
