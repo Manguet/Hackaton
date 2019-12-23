@@ -5,7 +5,7 @@
 {% block body %}
     <div class="mt-5 mb-5 mr-5 ml-5">
         <h2 class="text-center quizzName">{{ quizz_a.name }}</h2>
-        <form action="{{ path('answer_index') }}" method="post" name="quizz_form" class="text-center">
+        <form action="{{ path('answer_venus') }}" method="post" name="quizz_form" class="text-center">
             {% for question in questions %}
                 <p class="mt-5 text">{{ loop.index }}- {{ question.content }}</p>
                 <div id="mainShuffle{{ loop.index }}">
