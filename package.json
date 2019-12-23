@@ -23,7 +23,7 @@
         "postinstall" : "encore production --progress"
     },
     "engines": {
-        "yarn": "1.19.2",
-        "node": "8.10.0"
+        "yarn": "^1.19.2",
+        "node": "^8.10.0"
     }
 }
