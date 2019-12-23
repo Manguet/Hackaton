@@ -18,7 +18,7 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "start": "public/index.php",
-        "build": "webpack",
+        "build": "node_modules/.bin/encore production",
         "heroku-postbuild": "ng build --prod",
         "postinstall" : "encore production --progress"
     },
